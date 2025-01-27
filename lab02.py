@@ -56,6 +56,25 @@ elif healingPotion == 1:
 else:
     print("--- Your health is low at " + str(healthPoints) + " and you have no healing potions available!")
 
+# --- Add Weapons Array and Weapon Selection Logic
+weapons = ["Fist", "Knife", "Club", "Gun", "Bomb", "Nuclear bomb"]
+input("Roll the dice to choose your weapon (Press enter)")
+weaponRoll = random.choice(diceOptions)
+combatStrength += weaponRoll
+
+print(f"You rolled {weaponRoll}, selecting your weapon...")
+heroWeapon = weapons[weaponRoll - 1]
+print(f"Your weapon is: {heroWeapon}")
+
+if weaponRoll <= 2:
+    print("You rolled a weak weapon, friend.")
+elif weaponRoll <= 4:
+    print("Your weapon is meh.")
+else:
+    print("Nice weapon, friend!")
+
+if heroWeapon != "Fist":
+    print("Thank goodness you didn't roll the Fist...")
 
 # --- Nested if statement
 print("You meet the monster. FIGHT!!")
